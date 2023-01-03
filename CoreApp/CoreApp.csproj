@@ -13,9 +13,5 @@
     <ProjectReference Include="..\EmailsIntegration.CoreApp\EmailsIntegration.CoreApp.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Security\" />
-  </ItemGroup>
-
 
 </Project>
