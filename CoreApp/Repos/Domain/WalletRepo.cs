@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using CoreApp.Models.Domain;
 using System.Data;
 using MySqlConnector;
-
+using Dapper;
 
 namespace CoreApp.Repos.Domain
 {
@@ -19,7 +19,7 @@ namespace CoreApp.Repos.Domain
 		}
 
 
-	/*	public async Task<IEnumerable<Wallet>> GetAll()
+		public async Task<IEnumerable<Wallet>> GetAll()
 		{
 			using (IDbConnection connection = new MySqlConnection(_connectionString))
 			{
@@ -39,6 +39,7 @@ namespace CoreApp.Repos.Domain
 
 		public async Task<Wallet> Add(Wallet wallet)
 		{
+			
 			using (IDbConnection connection = new MySqlConnection(_connectionString))
 			{
 				var sql = "INSERT INTO wallets (user_id, balance) VALUES (@user_id, @balance); SELECT LAST_INSERT_ID();";
@@ -71,7 +72,7 @@ namespace CoreApp.Repos.Domain
 				await connection.ExecuteAsync(sql, new { id });
 				return wallet;
 			}
-		}*/
+		}
 
 	}
 }

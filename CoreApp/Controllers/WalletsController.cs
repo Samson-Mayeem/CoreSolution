@@ -1,5 +1,4 @@
-﻿using DataAccess.CoreApp;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using CoreApp.Models.Domain;
+using CoreApp.Repos.Interfaces;
+using CoreApp.Repos.Domain;
 
 namespace CoreApp.Controllers
 {
@@ -14,47 +15,47 @@ namespace CoreApp.Controllers
 	[Route("[controller]")]
 	public class PaymantController : ControllerBase
 	{
-		private readonly IDataAccess _userDataAccess;
+		private readonly IWalletRepo _walletRepo;
 
-		public PaymantController(IDataAccess userDataAccess)
+		public PaymantController(IWalletRepo walletRepo)
 		{
-			_userDataAccess = userDataAccess;
+			walletRepo = _walletRepo;
 		}
 
 		[HttpGet]
-		[Route("payments")]
-		[Route("api/payments")]
+		[Route("wallets")]
+		[Route("api/wallets")]
 		public async Task<ActionResult<IEnumerable<Wallet>>> GetAll()
 		{
-			var payments = await _userDataAccess.LoadData();
+			var payments = await _walletRepo.GetAll();
 			return Ok(payments);
 		}
 
 		[HttpGet("{id}")]
-		[Route("payments/{id}")]
+		[Route("api/wallets/{id}")]
 		public async Task<ActionResult<Wallet>> GetById(int id)
 		{
-			var payment = await _userDataAccess.GetById(id);
-			if (payment == null)
+			var wallet = await _walletRepo.GetById(id);
+			if (wallet == null)
 			{
 				return NotFound();
 			}
-			return Ok(payment);
+			return Ok(wallet);
 		}
 
 		[HttpPost]
-		[Route("payments")]
-		public async Task<ActionResult<Wallet>> Create([FromBody] Wallet payment)
+		[Route("api/wallets")]
+		public async Task<ActionResult<Wallet>> Create([FromBody] Wallet wallet)
 		{
-			var newPayment = await _userDataAccess.Add(payment);
-			return CreatedAtAction(nameof(GetById), new { id = newPayment.Id }, newPayment);
+			var newWallet = await _walletRepo.Add(wallet);
+			return CreatedAtAction(nameof(GetById), new { id = newWallet.Id }, newWallet);
 		}
 
 		[HttpPut("{id}")]
-		[Route("payments/{id}")]
+		[Route("api/wallets/{id}")]
 		public async Task<ActionResult<Wallet>> Update(int id, [FromBody] Wallet user)
 		{
-			var updatedPayment = await _userDataAccess.Update(id, user);
+			var updatedPayment = await _walletRepo.Update(id, user);
 			if (updatedPayment == null)
 			{
 				return NotFound();
@@ -63,10 +64,10 @@ namespace CoreApp.Controllers
 		}
 
 		[HttpDelete("{id}")]
-		[Route("payments/{id}")]
+		[Route("api/wallets/{id}")]
 		public async Task<ActionResult<Wallet>> Delete(int id)
 		{
-			var deletedDelete = await _userDataAccess.Delete(id);
+			var deletedDelete = await _walletRepo.Delete(id);
 			if (deletedDelete == null)
 			{
 				return NotFound();
