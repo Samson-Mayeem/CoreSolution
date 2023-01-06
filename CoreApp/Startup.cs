@@ -1,4 +1,4 @@
-using DataAccess.CoreApp;
+using CoreApp.Repos.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +29,7 @@ namespace CoreApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-			services.AddSingleton<IDataAccess, DataAccessLib>();
+			services.AddSingleton<IWalletRepo>();
 			services.AddSingleton(Configuration.GetConnectionString("DbConnection"));
 		}
 

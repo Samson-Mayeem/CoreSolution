@@ -1,9 +1,12 @@
 ﻿using CoreApp.Models.Enums;
 using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Providers.Entities;
 
 namespace CoreApp.Models.Domain
 {
-    public class Wallet
+	
+	public class Wallet
     {
         long Id { get; set; }  
         string Name { get; set; }

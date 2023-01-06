@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace CoreApp.Repos.Interfaces
 {
-    public interface IPaymentRepo
+    public interface IWalletRepo
     {
 		Task<IEnumerable<Wallet>> GetAll();
 		Task<Wallet> GetById(int id);

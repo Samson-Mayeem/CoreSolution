@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp", "CoreApp\CoreApp.csproj", "{1A2F1EC0-945C-4658-81BC-7488C94E0C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp", "CoreApp\CoreApp.csproj", "{1A2F1EC0-945C-4658-81BC-7488C94E0C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.CoreApp", "DataAccess.CoreApp\DataAccess.CoreApp.csproj", "{0BA4D94B-0546-4581-8A6C-DD200443FD13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailsIntegration.CoreApp", "EmailsIntegration.CoreApp\EmailsIntegration.CoreApp.csproj", "{89F762F4-B869-4472-858A-63568E64E7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailsIntegration.CoreApp", "EmailsIntegration.CoreApp\EmailsIntegration.CoreApp.csproj", "{89F762F4-B869-4472-858A-63568E64E7B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Full.Stack", "..\Core.FullStack\Core.Full.Stack\Core.Full.Stack.csproj", "{DAE553EF-1DF0-4938-B969-7942E41B1B19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{1A2F1EC0-945C-4658-81BC-7488C94E0C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A2F1EC0-945C-4658-81BC-7488C94E0C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A2F1EC0-945C-4658-81BC-7488C94E0C89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BA4D94B-0546-4581-8A6C-DD200443FD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BA4D94B-0546-4581-8A6C-DD200443FD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BA4D94B-0546-4581-8A6C-DD200443FD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BA4D94B-0546-4581-8A6C-DD200443FD13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
