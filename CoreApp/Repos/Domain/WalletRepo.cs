@@ -32,7 +32,7 @@ namespace CoreApp.Repos.Domain
 		{
 			using (IDbConnection connection = new MySqlConnection(_connectionString))
 			{
-				var wallet = await connection.QueryFirstOrDefaultAsync<Wallet>("SELECT * FROM wallets WHERE id = @id", new { id });
+				var wallet = await connection.QueryFirstOrDefaultAsync<Wallet>("SELECT * FROM wallets WHERE id = @Id", new { id });
 				return wallet;
 			}
 		}
@@ -42,7 +42,7 @@ namespace CoreApp.Repos.Domain
 			
 			using (IDbConnection connection = new MySqlConnection(_connectionString))
 			{
-				var sql = "INSERT INTO wallets (user_id, balance) VALUES (@user_id, @balance); SELECT LAST_INSERT_ID();";
+				var sql = "INSERT INTO wallets (id,name walletType,walletnumber,walletschema,walletcreated,walletowner) VALUES (@id, @Name, @WalletType,@Walletnumber,@Walletschema,@Walletcreated,@Walletowner); SELECT LAST_INSERT_ID();";
 				var newWalletId = await connection.ExecuteScalarAsync<int>(sql, wallet);
 				wallet.Id = newWalletId;
 				return wallet;
@@ -68,7 +68,7 @@ namespace CoreApp.Repos.Domain
 				{
 					return null;
 				}
-				var sql = "DELETE FROM wallets WHERE id = @id";
+				var sql = "DELETE FROM wallets WHERE id = @Id";
 				await connection.ExecuteAsync(sql, new { id });
 				return wallet;
 			}

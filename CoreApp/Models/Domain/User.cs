@@ -8,10 +8,9 @@ namespace CoreApp.Models.Domain
 	public class User
 	{
 		long Id { get; set; }	
+		long UserId { get; set; }
 		public string Name { get; set; }
 		public string Email { get; set; }
 		public string Password { get; set; }
-		[Range(1,5)]
-		public string UserId { get; set; }
 	}
 }

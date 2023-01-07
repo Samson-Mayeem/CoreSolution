@@ -47,20 +47,29 @@ namespace CoreApp.Controllers
 		[Route("api/wallets")]
 		public async Task<ActionResult<Wallet>> Create([FromBody] Wallet wallet)
 		{
-			var newWallet = await _walletRepo.Add(wallet);
-			return CreatedAtAction(nameof(GetById), new { id = newWallet.Id }, newWallet);
+			try
+			{
+				if(wallet == null) {
+				var newWallet = await _walletRepo.Add(wallet);
+				return CreatedAtAction(nameof(GetById), new { id = newWallet.Id }, newWallet);
+				}
+			}
+			catch(Exception ex) {
+				throw(ex);
+			}
+			return Ok();
 		}
 
 		[HttpPut("{id}")]
 		[Route("api/wallets/{id}")]
-		public async Task<ActionResult<Wallet>> Update(int id, [FromBody] Wallet user)
+		public async Task<ActionResult<Wallet>> Update(int id, [FromBody] Wallet wallet)
 		{
-			var updatedPayment = await _walletRepo.Update(id, user);
-			if (updatedPayment == null)
+			var updatedWallet = await _walletRepo.Update(id, wallet);
+			if (updatedWallet == null)
 			{
 				return NotFound();
 			}
-			return Ok(updatedPayment);
+			return Ok(updatedWallet);
 		}
 
 		[HttpDelete("{id}")]

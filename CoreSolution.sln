@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp", "CoreApp\CoreApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailsIntegration.CoreApp", "EmailsIntegration.CoreApp\EmailsIntegration.CoreApp.csproj", "{89F762F4-B869-4472-858A-63568E64E7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Full.Stack", "..\Core.FullStack\Core.Full.Stack\Core.Full.Stack.csproj", "{DAE553EF-1DF0-4938-B969-7942E41B1B19}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F762F4-B869-4472-858A-63568E64E7B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAE553EF-1DF0-4938-B969-7942E41B1B19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

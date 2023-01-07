@@ -1,3 +1,4 @@
+using CoreApp.Repos.Domain;
 using CoreApp.Repos.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +30,7 @@ namespace CoreApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-			services.AddSingleton<IWalletRepo>();
+			services.AddSingleton<IWalletRepo, WalletRepo>();
 			services.AddSingleton(Configuration.GetConnectionString("DbConnection"));
 		}
 
